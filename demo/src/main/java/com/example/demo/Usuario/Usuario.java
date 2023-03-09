@@ -9,12 +9,10 @@ public class Usuario {
     
     private Integer id;
     private String nome;
-    private String email;
 
-    public Usuario(Integer id, String nome, String email) {
+    public Usuario(Integer id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.email = email;
     }
 
 }

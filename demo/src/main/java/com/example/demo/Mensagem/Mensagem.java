@@ -9,14 +9,12 @@ import lombok.*;
 
 public abstract class Mensagem {
 
-    private String texto;
     private Usuario autor;
-    private Usuario destinatario;
+    private Integer id;
 
-    public Mensagem(String texto, Usuario autor, Usuario destinatario) {
-        this.texto = texto;
+    public Mensagem(Usuario autor, Integer id) {
         this.autor = autor;
-        this.destinatario = destinatario;
+        this.id = id;
     }
 
 }

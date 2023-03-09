@@ -23,8 +23,8 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public void criar_usuario(@RequestBody Usuario usuario) {
-        usuarioService.criar_usuario(usuario);
+    public Usuario criar_usuario(@RequestBody Usuario usuario) {
+        return usuarioService.criar_usuario(usuario);
     }
     
 }
