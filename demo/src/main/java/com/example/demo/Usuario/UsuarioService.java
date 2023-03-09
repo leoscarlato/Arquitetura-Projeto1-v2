@@ -20,7 +20,7 @@ public class UsuarioService {
                 return usuario;
             }
         }
-        return null;
+        throw new RuntimeException("Usuário não encontrado");
     }
 
     public Usuario criar_usuario(Usuario usuario) {
@@ -29,5 +29,7 @@ public class UsuarioService {
         usuarios.add(usuario);
         return usuario;
     }
+
+
 
 }

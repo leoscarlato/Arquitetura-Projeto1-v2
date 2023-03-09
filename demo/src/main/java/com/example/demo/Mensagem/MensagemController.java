@@ -28,4 +28,13 @@ public class MensagemController {
         return mensagemService.criarMensagemTexto(mensagem);
     }
     
+    @PostMapping("/Arquivo")
+    public MensagemArquivo criarMensagemArquivo(@RequestBody Map<String, String> mensagem) {
+        return mensagemService.criarMensagemArquivo(mensagem);
+    }
+
+    @GetMapping("/{id}/user")
+    public List<Mensagem> listarMensagensUsuario(@PathVariable Integer id) {
+        return mensagemService.buscarMensagemUsuario(id);
+    }
 }

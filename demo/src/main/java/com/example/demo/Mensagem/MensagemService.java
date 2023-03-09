@@ -32,7 +32,7 @@ public class MensagemService {
     }
 
     public List<Mensagem> buscarMensagemUsuario(Integer id){
-
+        Usuario usuario = usuarioService.buscar_usuario(id);
         List<Mensagem> mensagens_usuario = new ArrayList<Mensagem>();
         for (Mensagem mensagem : mensagens) {
             if (mensagem.getAutor().getId().equals(id)) {
@@ -47,6 +47,15 @@ public class MensagemService {
         String id_usuario = corpo.get("id");
         Usuario usuario = usuarioService.buscar_usuario(Integer.parseInt(id_usuario));
         MensagemTexto mensagem = new MensagemTexto(corpo.get("texto"), usuario , novoId);
+        mensagens.add(mensagem);
+        return mensagem;
+    }
+
+    public MensagemArquivo criarMensagemArquivo(Map<String, String> corpo){
+        int novoId = mensagens.size() + 1;
+        String id_usuario = corpo.get("id");
+        Usuario usuario = usuarioService.buscar_usuario(Integer.parseInt(id_usuario));
+        MensagemArquivo mensagem = new MensagemArquivo(corpo.get("nome_arquivo"), usuario , novoId);
         mensagens.add(mensagem);
         return mensagem;
     }
